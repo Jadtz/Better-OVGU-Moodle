@@ -62,5 +62,5 @@ This extension is not officially associated with or endorsed by Otto von Guerick
 
 ## Contact
 
-If you have any questions, feel free to open an issue or me.
+If you have any questions, feel free to open an issue or contact me.
 

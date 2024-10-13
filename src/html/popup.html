@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better OVGU Moodle</title>
+    <style>
+        body {
+            font-family: "Lucida Sans", Arial, sans-serif;
+            background: url('/images/bg_ovgu.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 20px;
+            min-width: 300px;
+            min-height: 200px;
+            color: #000;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.8);
+            transform: skew(-5deg);
+            z-index: -1;
+        }
+
+        h1 {
+            color: #7a003f;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .toggle-container {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #7a003f;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        button {
+            background-color: #7a003f;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: inherit;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #5a002f;
+        }
+    </style>
+</head>
+<body>
+<h1>Better OVGU Moodle</h1>
+
+<div class="toggle-container">
+    <span>Dark Mode</span>
+    <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider"></span>
+    </label>
+</div>
+
+<div class="toggle-container">
+    <span>Custom Menu</span>
+    <label class="switch">
+        <input type="checkbox" id="customNavbarToggle">
+        <span class="slider"></span>
+    </label>
+</div>
+
+<!-- The reload css button
+<button id="reloadCSS">Reload CSS</button>
+-->
+<script src="/src/js/popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Better OVGU Moodle",
+  "version": "1.0",
+  "description": "Customize Moodle for OVGU eLearning.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "background": {
+    "scripts": ["src/js/background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "src/html/popup.html",
+    "default_title": "Better OVGU Moodle"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://elearning.ovgu.de/*"],
+      "css": ["src/css/styles.css"],
+      "js": ["src/js/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "images/logo_ovgu.png",
+    "images/bg_ovgu.png",
+    "src/css/styles.css"
+  ]
+}
